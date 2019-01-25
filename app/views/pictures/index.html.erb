@@ -15,17 +15,16 @@
           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Action <span class="caret"></span>
           </button>
-          <ul class="dropdown-menu">
-            <li><%= link_to '投稿内容を編集する', edit_picture_path(picture) if picture.user_id == current_user.id %></li>
-            <li><%= link_to '投稿内容を削除する', picture, method: :delete, data: { confirm: '本当に投稿を削除しますか？' } if picture.user_id == current_user.id %></li>
-          </ul>
+            <ul class="dropdown-menu">
+              <li><%= link_to '投稿内容を編集する', edit_picture_path(picture) if picture.user_id == current_user.id %></li>
+              <li><%= link_to '投稿内容を削除する', picture, method: :delete, data: { confirm: '本当に投稿を削除しますか？' } if picture.user_id == current_user.id %></li>
+            </ul>
         </div>
       </li>
     </div>
     <% end %>
   </ul>
 </div>
-
 
 <div class="inner">
   <%= link_to '新規投稿する', new_picture_path %>
