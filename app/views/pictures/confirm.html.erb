@@ -1,16 +1,25 @@
-<h3>以下の内容で、送信する。</h3>
+<br>
 
-<%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
-  <%= form.hidden_field :content %>
-  <%= image_tag(@picture.image.url) if @picture.image? %>
-  <%= form.hidden_field :image_cache %>
+<div class="center">
+  <h1>以下の内容で、送信する。</h1>
+</div>
 
-  <p>投稿内容:<%= @picture.content %></p>
-  <%= form.submit  "登録する" %>
-<% end %>
-
-<%= form_with(model: @picture, url: new_picture_path, local: true, method: 'get') do |form| %>
-  <%= form.hidden_field :content %>
-  <%= form.hidden_field :image_cache %>
-  <%= form.submit "もどる", name: 'back' %>
-<% end %>
+<div class="contet_box">
+  <%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
+    <p><%= @picture.content %></p>
+    <br>
+    <%= form.hidden_field :content %>
+    <%= image_tag(@picture.image.url) if @picture.image? %>
+    <%= form.hidden_field :image_cache %>
+    <br>
+    <br>
+    <%= form.submit  "登録する", :class => "btn btn-lg btn-primary btn-block btn-signin" %>
+  <% end %>
+  <br>
+  <br>
+  <%= form_with(model: @picture, url: new_picture_path, local: true, method: 'get') do |form| %>
+    <%= form.hidden_field :content %>
+    <%= form.hidden_field :image_cache %>
+    <%= form.submit "戻る", name: 'back', :class => "btn btn-lg btn-primary btn-block btn-signin" %>
+  <% end %>
+</div>

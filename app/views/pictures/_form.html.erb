@@ -11,19 +11,21 @@
     </div>
   <% end %>
 
+<div class="contet_box">
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+    <br>
+    <%= form.text_area :content, :class => 'text_area' %>
   </div>
-  
+  <br>
   <div class="field">
-    <%= form.label :image %>
     <%= image_tag(@picture.image.url) if @picture.image.url %><br>
     <%= form.file_field :image %>
     <%= form.hidden_field :image_cache %>
   </div>
-  
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <br>
+  <br>
+  <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">
+  　新規投稿する
+  </button>
+</div>
 <% end %>

@@ -15,11 +15,11 @@
     <% end %>
     
     <% if logged_in? %>
-      <%= link_to "Profile", user_path(current_user.id) %>
-      <%= link_to "Logout", session_path(current_user.id), method: :delete %>
+      <%= link_to "ホーム", pictures_path, :class => 'nav' %>
+      <%= link_to "ログアウト", session_path(current_user.id), method: :delete, :class => 'nav' %>
     <% else %>
-      <%= link_to "Sign up", new_user_path %>
-      <%= link_to "Login", new_session_path %>
+      <%= link_to "新規登録", new_user_path, :class => 'nav' %>
+      <%= link_to "ログイン", new_session_path, :class => 'nav' %>
     <% end %>
     
     <%= yield %>
