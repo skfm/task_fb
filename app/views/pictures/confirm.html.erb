@@ -2,7 +2,7 @@
 
 <%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
   <%= form.hidden_field :content %>
-  <%= image_tag(@picture.image.url) %>
+  <%= image_tag(@picture.image.url) if @picture.image? %>
   <%= form.hidden_field :image_cache %>
 
   <p>投稿内容:<%= @picture.content %></p>
